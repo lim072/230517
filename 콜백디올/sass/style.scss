@@ -1,0 +1,201 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,ol,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    overflow: hidden;
+
+    header{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5vh 5vw;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .sns{
+            display: flex;
+            a{
+                display: block;
+                width: 32px;
+                height: 32px;
+                background-color: #333;
+                border-radius: 50%;
+                margin-left: 20px;
+                font-size: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+            }
+        }
+    }
+    main{
+        width: 100%;
+        height: 100vh;
+        background: url(../img/bgBody.jpg) no-repeat center;
+        background-size: cover;
+
+        &.on{
+            .txt{
+                transform: translateY(-200%);
+                opacity: 0;
+            }
+            .woman{
+                left: 100%;
+                opacity: 0;
+            }
+            .btnOpen{
+                bottom: 0vh;
+                opacity: 0;
+            }
+        }
+        .txt{
+            width: 40vw;
+            position: absolute;
+            top: 50%;
+            left: 15vw;
+            transform: translateY(-70%);
+            transition: 1s 0s;
+        }
+        .btnOpen{
+            display: block;
+            width: 20vw;
+            min-width: 300px;
+            //반응형으로 너비값이 줄었을때 버튼안의 글자가 버튼 밖으로 튀어나가는 현샹이
+            //생길수 있는데 min-width값으로 특정 너비(글자가 버튼밖으로 나가는 너비)이하로
+            //줄어들지 않도록 하는 방법입니다
+            height: 40px;
+            background-color: rgba(0,0,0,0.6);
+            position: absolute;
+            bottom: 30vh;
+            left: 15vw;
+            color: #fff;
+            font: bold 15px/1 'arial';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s 0.4s;
+        }
+        .woman{
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transition: 1s 0.2s;
+        }
+    }
+    footer{
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        background: rgba(0,0,0,0.6);
+        padding: 10px 5vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul{
+            display: flex;
+            li{
+                margin-right: 50px;
+                font: bold 12px/1 'arial';
+                color: #aaa;
+            }
+        }
+        p{
+            font: bold 12px/1 'arial';
+            color: #aaa;
+            letter-spacing: 2px;
+        }
+    }
+    aside{
+        display: none;
+        width: 60vw;
+        height: 60vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .top{
+            width: 0%;
+            height: 1px;
+            background-color: #111;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .right{
+            width: 1px;
+            height: 0%;
+            background-color: #111;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .bottom{
+            width: 0%;
+            height: 1px;
+            background-color: #111;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .left{
+            width: 1px;
+            height: 0%;
+            background-color: #111;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .inner{
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            //줄바꿈
+            justify-content: space-between;
+            align-items: center;
+            .pic{
+                width: 30%;
+            }
+            .content{
+                width: 65%;
+                h2{
+                    font: 5vw/1 "work sans";
+                    color: #ddd;
+                    margin-bottom: 20px;
+                }
+                p{
+                    font: 16px/1 "arial";
+                    color: #bbb;
+                }
+                .btnClose{
+                    position: absolute;
+                    top: 40px;
+                    right: 40px;
+                }
+            }
+        }
+    }
+}
+
